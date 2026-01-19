@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --tg-theme-bg-color: #0f172a;
+  --tg-theme-text-color: #f8fafc;
+  --tg-theme-hint-color: #94a3b8;
+  --tg-theme-button-color: #38bdf8;
+  --tg-theme-button-text-color: #0f172a;
+  --tg-theme-secondary-bg-color: #1e293b;
+}
+
+body {
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+button:disabled {
+  opacity: 0.6;
+}
