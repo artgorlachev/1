@@ -1,0 +1,24 @@
+version: "3.9"
+services:
+  server:
+    build: ./apps/server
+    ports:
+      - "4000:4000"
+    volumes:
+      - ./apps/server:/app
+      - server-data:/app/prisma
+    env_file:
+      - ./apps/server/.env
+    command: npm run dev
+  bot:
+    build: ./apps/bot
+    depends_on:
+      - server
+    volumes:
+      - ./apps/bot:/app
+    env_file:
+      - ./apps/bot/.env
+    command: npm run dev
+
+volumes:
+  server-data:
